@@ -15,7 +15,7 @@ function UserList(props) {
             login = {user.login}
             dob = {user.dob.date}
             phone = {user.phone}
-            image = {user.image}
+            image = {user.picture.large}
           />
         </li>
       )

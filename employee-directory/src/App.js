@@ -16,13 +16,15 @@ class App extends Component {
     API.getUsers()
     .then(res => {
       this.setState({rawUsers: res.data.results, showUsers: res.data.results})
-      console.log(this.state.showUsers);
     })
     .catch(err => console.log(err))
   }
 
   handleSort = event => {
-    this.setState({ sort: event.target.value })
+    const valObj = JSON.parse(event.target.value);
+    console.log(valObj);
+    console.log(valObj.name)
+    this.setState({ sort: valObj })
   }
 
   handleFilter = event => {
@@ -38,7 +40,6 @@ class App extends Component {
     else {
       tempUsers = this.state.rawUsers.map((user) => user);
     }
-
     if (this.state.sort){
       tempUsers.sort((a,b) => (a.name[this.state.sort.name] > b.name[this.state.sort.name]) ? 1 : ((b.name[this.state.sort.name] > a.name[this.state.sort.name]) ? -1 : 0))
       if (this.state.sort.order === "desc"){
@@ -52,6 +53,8 @@ class App extends Component {
   render() {
     return (
       <div>
+        <h2>Random Employee Directory</h2>
+        <br/>
         <SortFilter
           handleSort = {this.handleSort}
           handleFilter = {this.handleFilter}

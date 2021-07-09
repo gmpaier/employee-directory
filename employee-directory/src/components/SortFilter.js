@@ -7,10 +7,10 @@ function SortFilter (props){
         <label htmlFor="sort-select" className="form-label">Sort:</label>
         <select id="sort-select" className="form-select" onChange={props.handleSort}>
           <option value="">-- Select --</option>
-          <option value={{name: "first", order: "asc"}}>First Name, Ascending</option>
-          <option value={{name: "first", order: "desc"}}>First Name, Descending</option>
-          <option value={{name: "last", order: "asc"}}>Last Name, Ascending</option>
-          <option value={{name: "last", order: "desc"}}>Last Name, Descending</option>
+          <option value='{"name": "first", "order": "asc"}'>First Name, Ascending</option>
+          <option value='{"name": "first", "order": "desc"}'>First Name, Descending</option>
+          <option value='{"name": "last", "order": "asc"}'>Last Name, Ascending</option>
+          <option value='{"name": "last", "order": "desc"}'>Last Name, Descending</option>
         </select>
       </div>
       <div className="mb-3">
